@@ -18,6 +18,9 @@ for (var i = 1; i < 4; i++) {
     $("#crystals").append(imageCrystal);
 }
 
+var loses = 0;
+var wins = 0;
+
 $(".crystal-image").on("click", function () {
     // alert("This a crystal")
     var crystalValue = ($(this).attr("data-crystalvalue"));
@@ -29,11 +32,20 @@ $(".crystal-image").on("click", function () {
     if (counter === randomNum) {
         alert("Awesome!");
         wins++;
+        counter = 0;
     }
     else if (counter >= randomNum) {
         alert("Better Luck Next Time")
         loses++;
+        counter = 0;
+        randomNum;
     }
+
+    $(".loses").text("Loses: " + loses);
+    $(".wins").text("Wins: " + wins);
+    $(".totals").text("Your Total: " + counter);
 });
 
-$("#loses").text(loses)
+/* 1) the randomNum reset
+2) 1-12 random number for crystals
+ */
