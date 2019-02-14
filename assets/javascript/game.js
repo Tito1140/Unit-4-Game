@@ -1,4 +1,4 @@
-var randomNum = Math.floor((Math.random() * 120) + 19);
+var randomNum = Math.floor((Math.random() * 80) + 19);
 
 $("#number-to-guess").text(randomNum)
 alert("The Number to Guess is " + randomNum);
@@ -42,13 +42,17 @@ $(".crystal-image").on("click", function () {
         alert("Awesome!");
         wins++;
         counter = 0;
+        randomNum = Math.floor((Math.random() * 80) + 19);
+        $("#number-to-guess").text(randomNum);
+        crystalValue = Math.floor((Math.random() * 12) + 1);
     }
     else if (counter >= randomNum) {
         alert("Better Luck Next Time")
         loses++;
         counter = 0;
-        randomNum = Math.floor((Math.random() * 120) + 19);
+        randomNum = Math.floor((Math.random() * 80) + 19);
         $("#number-to-guess").text(randomNum);
+        crystalValue = Math.floor((Math.random() * 12) + 1);
     }
 
     $(".loses").text("Loses: " + loses);
