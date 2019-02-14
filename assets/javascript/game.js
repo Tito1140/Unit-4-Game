@@ -1,11 +1,20 @@
-var randomNum = Math.floor((Math.random() * 12) + 1);
+var randomNum = Math.floor((Math.random() * 120) + 19);
 
 $("#number-to-guess").text(randomNum)
 alert("The Number to Guess is " + randomNum);
 
 var counter = 0;
-var numberOptions = [1, 2, 3, 4];/*Math.floor((Math.floor() * 12) + 1);*/
-for (var i = 1; i < 4; i++) {
+
+var first = Math.floor((Math.random() * 12) + 1);
+var second = Math.floor((Math.random() * 12) + 1);
+var third = Math.floor((Math.random() * 12) + 1);
+var fourth = Math.floor((Math.random() * 12) + 1);
+console.log(first);
+console.log(second);
+console.log(third);
+console.log(fourth);
+var numberOptions = [first, second, third, fourth]
+for (var i = 0; i < 4; i++) {
 
     var imageCrystal = $("<img>");
 
@@ -38,7 +47,8 @@ $(".crystal-image").on("click", function () {
         alert("Better Luck Next Time")
         loses++;
         counter = 0;
-        randomNum;
+        randomNum = Math.floor((Math.random() * 120) + 19);
+        $("#number-to-guess").text(randomNum);
     }
 
     $(".loses").text("Loses: " + loses);
@@ -46,6 +56,4 @@ $(".crystal-image").on("click", function () {
     $(".totals").text("Your Total: " + counter);
 });
 
-/* 1) the randomNum reset
-2) 1-12 random number for crystals
- */
+
